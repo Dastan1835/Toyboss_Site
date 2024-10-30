@@ -1,0 +1,29 @@
+{% load static %}
+<div class="language-link">
+
+<form action="{% url 'set_language' %}" method="post" style="display: inline; ">
+    {% csrf_token %}
+    <button type="submit" name="language" value="ky">
+        <img src="{% static 'img/svg/kg-icon.svg' %}" alt="Кыргызский" />
+    </button>
+</form>
+<form action="{% url 'set_language' %}" method="post" style="display: inline;">
+    {% csrf_token %}
+    <button type="submit" name="language" value="ru">
+        <img src="{% static 'img/svg/ru-icon.svg' %}" alt="Русский" />
+    </button>
+</form>
+<form action="{% url 'set_language' %}" method="post" style="display: inline;">
+    {% csrf_token %}
+    <button type="submit" name="language" value="en">
+        <img src="{% static 'img/svg/en-icon.svg' %}" alt="English" />
+    </button>
+</form>
+<form action="{% url 'set_language' %}" method="post" style="display: inline;">
+    {% csrf_token %}
+    <button type="submit" name="language" value="kk">
+        <img src="{% static 'img/svg/kz-icon.svg' %}" alt="Қазақша" />
+    </button>
+</form>
+
+</div>

@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-28 18:40+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: .\templates\about-company.html:16 .\templates\base.html:33
+#: .\templates\index.html:17 .\templates\product-inner.html:18
+#: .\templates\product.html:17 .\templates\publications-inner.html:16
+#: .\templates\publications.html:16 .\templates\recipes-inner.html:17
+#: .\templates\recipes.html:17
+msgid "О нас"
+msgstr "Биз жөнүндө"
+
+#: .\templates\about-company.html:17 .\templates\base.html:34
+#: .\templates\include\href-the-home.html:2 .\templates\index.html:18
+#: .\templates\product-inner.html:19 .\templates\product-inner.html:40
+#: .\templates\product.html:18 .\templates\product.html:39
+#: .\templates\publications-inner.html:17 .\templates\publications.html:17
+#: .\templates\recipes-inner.html:18 .\templates\recipes.html:18
+msgid "Продукция"
+msgstr "Өндүрүштөр"
+
+#: .\templates\about-company.html:18 .\templates\base.html:35
+#: .\templates\index.html:19 .\templates\product-inner.html:20
+#: .\templates\product.html:19 .\templates\publications-inner.html:18
+#: .\templates\publications.html:18 .\templates\recipes-inner.html:19
+#: .\templates\recipes.html:19
+msgid "Публикации"
+msgstr "Жарыяланмалар "
+
+#: .\templates\about-company.html:21 .\templates\base.html:36
+#: .\templates\index.html:22 .\templates\product-inner.html:23
+#: .\templates\product-inner.html:72 .\templates\product.html:22
+#: .\templates\publications-inner.html:21 .\templates\publications.html:21
+#: .\templates\recipes-inner.html:22 .\templates\recipes.html:22
+msgid "Рецепты"
+msgstr "Рецепттер"
+
+#: .\templates\about-company.html:37 .\templates\index.html:61
+msgid "О НАС"
+msgstr "БИЗ ЖӨНҮНДӨ"
+
+#: .\templates\include\href-the-home.html:2
+msgid "Главная"
+msgstr "Башкы бет"
+
+#: .\templates\include\href-the-home.html:2
+msgid "Колбасы"
+msgstr "Шужук"
+
+#: .\templates\index.html:47 .\templates\index.html:77
+#: .\templates\index.html:128
+msgid "Узнайте как вкуснее"
+msgstr "Кандай даамдуулугун билиниз"
+
+#: .\templates\index.html:48 .\templates\index.html:78
+msgid "Миссия компании заключается в том, чтобы прикладывать все силы для улучшения качества жизни наших потребителей."
+msgstr "Компаниянын миссиясы—биздин керектөөчүлөрдүн жашоо сапатын жакшыртуу үчүн бардык күч-аракетти жумшоо."
+
+#: .\templates\index.html:48 .\templates\index.html:78
+msgid "Наша продукция"
+msgstr "Биздин өндүрүштөр"
+
+#: .\templates\index.html:66
+msgid "подробнее о нас"
+msgstr "биз жөнүндө кененирээк"
+
+#: .\templates\index.html:87
+msgid "Награды"
+msgstr "Сыйлыктар"
+
+#: .\templates\index.html:129
+msgid "Миссия компании заключается в том,  чтобы прикладывать все силы для улучшения качества жизни наших потребителей."
+msgstr "Компаниянын миссиясы  —  биздин керектөөчүлөрдүн жашоо сапатын жакшыртуу үчүн бардык күч-аракетти жумшоо."
+
+#: .\templates\index.html:129 .\templates\recipes-inner.html:39
+#: .\templates\recipes.html:39
+msgid "рецепты"
+msgstr "рецептер"
+
+#: .\templates\index.html:138 .\templates\publications-inner.html:38
+#: .\templates\publications.html:39
+msgid "публикации"
+msgstr "жарыяланмалар"
+
+#: .\templates\index.html:146 .\templates\publications.html:49
+msgid "подробнее"
+msgstr "кененирээк"
+
+#: .\templates\product-inner.html:62
+msgid "Названия"
+msgstr "Аталышы"
+
+#: .\templates\product-inner.html:67
+msgid "Состав"
+msgstr "Курамы"
+
+#: .\templates\product.html:75
+msgid "Смотреть все"
+msgstr "Баардыгын көрүү"
+
+#: .\templates\recipes-inner.html:50
+msgid "Ингредиенты:"
+msgstr "Ингредиентер"

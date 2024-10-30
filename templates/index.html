@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} home {% endblock %}
+{% load i18n %}
+{% block content %}
+
+     <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">
+            <div class="header-logo__img"><a href="#"><img src="{% static 'img/svg/logo-header.svg' %}"/></a></div>
+          </div>
+          <div class="header-nav__content">
+            <div class="navigation">
+              <ul class="nav">
+                <div class="nav-group">
+                  <li class="nav-link "><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'products' %}">{% trans 'Продукция' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'publications' %}">{% trans 'Публикации' %}</a></li>
+                </div>
+                <div class="nav-group">
+                  <li class="nav-link"><a href="{% url 'recipes' %}">{% trans 'Рецепты' %}</a></li>
+
+                </div>
+              </ul>
+            </div>
+            <div class="header-language">
+              {% include 'include/social_media.html' %}
+              {% include 'include/languages.html' %}            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main__content">
+      <section class="main-slider-section test" style="background: url({% static 'img/jpg/slider-background.jpg' %})">
+        <div class="container">
+          <div class="main-slider">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slider-content">
+                    <div class="product-name-img" smooth-parallax="smooth-parallax" start-movement="0" end-movement="1" start-position-y="0.1" end-position-y="-8"><img src="{% static 'img/png/slider-product-name.png' %}"/></div>
+                    <div class="product-img2" smooth-parallax="smooth-parallax" start-movement="0" end-movement="1" start-position-y="0.1" end-position-y="-3"><img src="{% static 'img/png/product-img2.png' %}"/></div>
+                    <div class="product-img3" smooth-parallax="smooth-parallax" start-movement="0" end-movement="1" start-position-y="0.1" end-position-y="3"><img src="{% static 'img/png/product-img33.png' %}"/></div>
+                    <div class="product-slider-heading">
+                      <h3> {% trans 'Узнайте как вкуснее' %}</h3>
+                      <p>  {% trans 'Миссия компании заключается в том, чтобы прикладывать все силы для улучшения качества жизни наших потребителей.' %}</p><a class="link__detail" href="{% url 'products' %}">{% trans 'Наша продукция' %}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-us">
+        <div class="container">
+          <div class="about-us__content">
+            <div class="about-us__content-left">
+              <h2>{% trans 'О НАС' %}</h2>
+            </div>
+            <div class="about-us__content-right">
+              <h2><a href="#">{{ about_me.title }} </a></h2>
+              <p>  {{ about_me.short_description  }}</p>
+              <div class="content-right__img"><img src="{{ about_me.image.url }}"/></div><a class="link__detail" href="{% url 'about' %}">{% trans 'подробнее о нас' %}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="whats-tastier" style="background: url({% static 'img/jpg/slider-background.jpg' %})">
+        <div class="whats-tastier__img1" smooth-parallax="smooth-parallax" start-movement="0.1" end-movement=".4" start-position-x="-.8" end-position-x="0"><img src="{% static 'img/png/img5.png' %}"/></div>
+        <div class="whats-tastier__img2" smooth-parallax="smooth-parallax" start-movement="0.1" end-movement=".4" start-position-y=".8" end-position-y="0"><img src="{% static 'img/png/img6.png' %}"/></div>
+        <div class="container">
+          <div class="whats-tastier__content">
+            <div class="product-slider-heading">
+              <h3>{% trans 'Узнайте как вкуснее' %}</h3>
+              <p> {% trans 'Миссия компании заключается в том, чтобы прикладывать все силы для улучшения качества жизни наших потребителей.' %}</p><a class="link__detail" href="{% url 'products' %} ">{% trans 'Наша продукция' %}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-us">
+        <div class="container">
+          <div class="about-us__content">
+            <div class="about-us__content-left">
+              <h2>{% trans 'Награды' %}</h2>
+            </div>
+            <div class="about-us__content-right">
+              <div class="awards__img-all">
+                <div class="swiper-container2">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="awards__img-block">
+                        <div class="awards__img"><a href="#"><img src="{% static 'img/png/icon-best.png' %}"/></a></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="awards__img-block">
+                        <div class="awards__img"><a href="#"><img src="{% static 'img/png/icon-best.png' %}"/></a></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="awards__img-block">
+                        <div class="awards__img"><a href="#"><img src="{% static 'img/png/icon-best.png' %}"/></a></div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="awards__img-block">
+                        <div class="awards__img"><a href="#"><img src="{% static 'img/png/icon-best.png' %}"/></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="whats-tastier" style="background: url({% static 'img/jpg/slider-background.jpg' %})">
+        <div class="whats-tastier__img1" smooth-parallax="smooth-parallax" start-movement="0.4" end-movement=".7" start-position-x="-.8" end-position-x="0"><img src="{% static 'img/png/img5.png' %}"/></div>
+        <div class="whats-tastier__img2" smooth-parallax="smooth-parallax" start-movement="0.4" end-movement=".7" start-position-y=".8" end-position-y="0"><img src="{% static 'img/png/img6.png' %}"/></div>
+        <div class="container">
+          <div class="whats-tastier__content">
+            <div class="product-slider-heading">
+              <h3>{% trans 'Узнайте как вкуснее' %}</h3>
+              <p> {% trans ' Миссия компании заключается в том, чтобы прикладывать все силы для улучшения качества жизни наших потребителей.' %}</p><a class="link__detail" href="{% url 'recipes' %} ">{% trans 'рецепты' %}</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about-us">
+        <div class="container">
+          <div class="about-us__content">
+            <div class="about-us__content-left">
+              <h2>{% trans 'публикации' %}</h2>
+            </div>
+            <div class="publications__all">
+              {% for item in publications %}
+              <div class="publications__card">
+                <div class="about-us__content-right">
+                  <h2 data-mh="my-group"><a href="#">{{ item.title }}</a></h2>
+                  <p data-mh="my-group1"> {{ item.short_description }}</p>
+                  <div class="content-right__img"><img src="{{ item.image.url }}"/></div><a class="link__detail" href="{% url 'publications-detail' item.id %} ">{% trans 'подробнее' %}</a>
+                </div>
+              </div>
+
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {% endblock %}
+

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} publications-inner {% endblock %}
+{% load i18n %}
+{% block content %}
+     <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">
+            <div class="header-logo__img"><a href="#"><img src="{% static 'img/svg/logo-header.svg' %}"/></a></div>
+          </div>
+          <div class="header-nav__content">
+            <div class="navigation">
+              <ul class="nav">
+                <div class="nav-group">
+                  <li class="nav-link "><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'products' %}">{% trans 'Продукция' %}</a></li>
+                  <li class="nav-link active"><a href="{% url 'publications' %}">{% trans 'Публикации' %}</a></li>
+                </div>
+                <div class="nav-group">
+                  <li class="nav-link"><a href="{% url 'recipes' %}">{% trans 'Рецепты' %}</a></li>
+
+                </div>
+              </ul>
+            </div>
+            <div class="header-language">
+              {% include 'include/social_media.html' %}
+              {% include 'include/languages.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="product publications-inner-page">
+      <div class="container">
+        <div class="product__content">
+          <div class="product-left">
+            <h1> {% trans 'публикации' %}</h1>
+          </div>
+          <div class="product-right">
+            <div class="about-company-all">
+             {% include 'include/href-the-home.html' %}
+              <div class="about-company__content">
+                <div class="about-company">
+                  <h2 class="h2"> {{ publication.title }}</h2>
+                  <h5 class="h5"> {{publication.created_at}}</h5>
+                  <p> {{ publication.short_description }}</p>
+                  <div class="about-company__img">
+                    <div class="main-slider">
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+
+                          <div class="swiper-slide">
+                            <div class="publications-inner-img"><img src="{{publication.image.url}}"/></div>
+                          </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p> {{publication.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

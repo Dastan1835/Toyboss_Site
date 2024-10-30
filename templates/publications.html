@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} publications {% endblock %}
+{% load i18n %}
+{% block content %}
+     <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">
+            <div class="header-logo__img"><a href="#"><img src="{% static 'img/svg/logo-header.svg' %}"/></a></div>
+          </div>
+          <div class="header-nav__content">
+            <div class="navigation">
+              <ul class="nav">
+                <div class="nav-group">
+                  <li class="nav-link "><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'products' %}">{% trans 'Продукция' %}</a></li>
+                  <li class="nav-link active "><a href="{% url 'publications' %}">{% trans 'Публикации' %}</a></li>
+                </div>
+                <div class="nav-group">
+                  <li class="nav-link"><a href="{% url 'recipes' %}">{% trans 'Рецепты' %}</a></li>
+
+                </div>
+              </ul>
+            </div>
+            <div class="header-language">
+              {% include 'include/social_media.html' %}
+              {% include 'include/languages.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="product publications-page">
+      <div class="container">
+        <div class="product__content">
+          <div class="product-left">
+            <h1> {% trans 'публикации' %}</h1>
+          </div>
+          <div class="product-right">
+            <div class="about-company-all">
+             {% include 'include/href-the-home.html' %}
+              <div class="about-company__content">
+                {% for item in page_obj %}
+                <div class="about-company">
+                  <h2 class="h2"> {{ item.title }} </h2>
+                  <h5 class="h5"> {{ item.created_at }}</h5>
+                  <p>{{ item.short_description }}<span> {% trans 'подробнее' %}</span></p><img src="{{ item.image.url }}"/><a href="{% url 'publications-detail' item.id %}"></a>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="publication__pagination">
+
+                  {% if page_obj.has_previous %}
+                  {% if page_obj.has_next %}
+                <div class="pagination__left"><a class="arrow-left "  href="?page={{page_obj.previous_page_number}}"></a></div>
+                <div class="publication__pagination-num" ><a href="?page=1" >1</a> --- <a href="?page={{page_obj.previous_page_number}}"> {{ page_obj.previous_page_number }}</a><a class="active" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>  <a  href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }} </a> --- <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a> </div>
+                <div class="pagination__right"><a class="arrow-right " href="?page={{ page_obj.next_page_number }}"></a></div>
+                  {% else %}
+                     <div class="pagination__left"><a class="arrow-left "  href="?page={{page_obj.previous_page_number}}"></a></div>
+                <div class="publication__pagination-num" ><a href="?page=1" >1</a> --- <a href="#"> {{ page_obj.previous_page_number }}</a><a class="active" href="#">{{ page_obj.number }}</a></div>
+                    <div class="pagination__right"><a class="arrow-right disabled" ></a></div>
+                  {% endif %}
+                {% else %}
+                <div class="pagination__left"><a class="arrow-left disabled" ></a></div>
+                <div class="publication__pagination-num" ><a class="active" href="#">{{ page_obj.number }}</a>  <a  href="#">{{ page_obj.next_page_number }} </a> --- <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a> </div>
+                <div class="pagination__right"><a class="arrow-right " href="?page={{ page_obj.next_page_number }}"></a></div>
+                {% endif %}
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

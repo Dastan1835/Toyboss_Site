@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} product-inner {% endblock %}
+{% load i18n %}
+{% block content %}
+
+
+      <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">
+            <div class="header-logo__img"><a href="#"><img src="{% static 'img/svg/logo-header.svg' %}"/></a></div>
+          </div>
+          <div class="header-nav__content">
+            <div class="navigation">
+              <ul class="nav">
+                <div class="nav-group">
+                  <li class="nav-link"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link  active "><a href="{% url 'products' %}">{% trans 'Продукция' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'publications' %}">{% trans 'Публикации' %}</a></li>
+                </div>
+                <div class="nav-group">
+                  <li class="nav-link"><a href="{% url 'recipes' %}">{% trans 'Рецепты' %}</a></li>
+
+                </div>
+              </ul>
+            </div>
+            <div class="header-language">
+             {% include 'include/social_media.html' %}
+              {% include 'include/languages.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="product">
+      <div class="container">
+        <div class="product__content">
+          <div class="product-left">
+            <h1>{% trans 'Продукция' %}</h1>
+          </div>
+          <div class="product-right">
+            {% include 'include/href-the-home.html' %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="parallax" style="background: url({% static 'img/jpg/slider-background.jpg' %})">
+      <div class="paralax-img"><img src="{% static 'img/png/img9.png' %}"/></div>
+      <div class="paralax-img2"><img src="{% static 'img/png/img10.png' %}"/></div>
+      <div class="parallax-heading">
+        <h2>{{ product.category.name }}</h2>
+      </div>
+    </section>
+    <section class="product__inner">
+      <div class="container">
+        <div class="product-right">
+          <div class="product__inner-content">
+            <div class="product__inner-img"><img src="{{ product.image.url }}"/></div>
+            <div class="productinner-heading-all">
+              <div class="product__inner-heading">
+                <h2> {% trans 'Названия' %} </h2>
+                <h3> {{ product.name }}</h3>
+                <p>  {{ product.description }}</p>
+              </div>
+              <div class="product__inner-heading">
+                <h2> {% trans 'Состав' %} </h2>
+                <p> {{ product.ingredients}}</p>
+              </div>
+
+              <div class="product__inner-heading">
+                <h2>{% trans 'Рецепты' %} </h2>
+                <div class="product__inner-card-all">
+                  {% for item in product.recipes.all %}
+                  <div class="product__inner-cards">
+                    <div class="product__inner-card">
+                      <div class="product__inner-card-img"><img src="{{ item.image.url }}" data-mh="my-group2"/></div>
+                      <div class="product__inner-card-heading">
+                        <p>{{ item.title}}</p>
+                      </div><a href="{% url 'recipes-detail' item.id %}"></a>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-product">
+      <div class="container">
+        <div class="product-sausage">
+          <div class="product-right">
+            <div class="product__card-all">
+
+              {% for item in similar_products %}
+              <div class="product__card-inner">
+                <div class="product__card">
+                  <div class="product__card-img"><img src="{{ item.image.url}}"/></div>
+                  <h4 data-mh="my-group"> {{ item.name }}</h4><a href="{% url 'product-detail' item.id %} "></a>
+                </div>
+              </div>
+              {% endfor %}
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

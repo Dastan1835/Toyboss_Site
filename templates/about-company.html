@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} about {% endblock %}
+{% load i18n %}
+{% block content %}
+     <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">
+            <div class="header-logo__img"><a href="#"><img src="{% static 'img/svg/logo-header.svg' %}"/></a></div>
+          </div>
+          <div class="header-nav__content">
+            <div class="navigation">
+              <ul class="nav">
+                <div class="nav-group">
+                  <li class="nav-link active"><a href="{% url 'about' %}">{% trans 'О нас' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'products' %}">{% trans 'Продукция' %}</a></li>
+                  <li class="nav-link"><a href="{% url 'publications' %}">{% trans 'Публикации' %}</a></li>
+                </div>
+                <div class="nav-group">
+                  <li class="nav-link"><a href="{% url 'recipes' %}">{% trans 'Рецепты' %}</a></li>
+                </div>
+              </ul>
+            </div>
+            <div class="header-language">
+              {% include 'include/social_media.html' %}
+              {% include 'include/languages.html' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="product">
+      <div class="container">
+        <div class="product__content">
+          <div class="product-left">
+            <h1>{% trans 'О НАС' %}</h1>
+          </div>
+          <div class="product-right">
+            <div class="about-company-all">
+              {% include 'include/href-the-home.html' %}
+              <div class="about-company__content">
+
+                <div class="about-company">
+                  <p> {{ about_me.description|safe }} </p>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
